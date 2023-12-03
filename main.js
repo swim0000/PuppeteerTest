@@ -26,7 +26,7 @@ const outputFolder = './html/';
       const fileName = `${url.split('/').pop()}.html`;
       fs.writeFileSync(`${outputFolder}/${fileName}`, content);
 
-      await page.waitForTimeout(100);
+      await delay(100);
     } catch (error) {
       console.error(`Error scraping URL ${url}: ${error.message}`);
     }
