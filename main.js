@@ -5,14 +5,12 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
 
   await page.goto('https://www.example.com');
-
-
-  
-await page.click('button[type="button"]'); // Click the "Save As" button
-  await page.waitForSelector('input[type="file"]'); // Wait for the file input to appear
+ 
+await page.click('button[type="button"]'); 
+  await page.waitForSelector('input[type="file"]'); 
 
   const input = await page.$('input[type="file"]');
-  await input.uploadFile('example.html'); // Select the HTML file format
+  await input.uploadFile('example.html'); 
 
   await browser.close();
 })();
