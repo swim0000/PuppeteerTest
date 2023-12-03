@@ -9,7 +9,6 @@ A simple web scraping script using Puppeteer to extract HTML content from a list
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
