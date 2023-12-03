@@ -1,25 +1,18 @@
-// Import puppeteer
-import puppeteer from 'puppeteer';
+const puppeteer = require('puppeteer');
 
 (async () => {
-  // Launch the browser
   const browser = await puppeteer.launch();
-
-  // Create a page
   const page = await browser.newPage();
 
-  // Go to your site
-  await page.goto('https://www.gov.uk/browse/environment-countryside/farming-land-management');
+  await page.goto('https://www.example.com');
 
-  // Query for an element handle.
-  const element = await page.waitForSelector('div > .class-name');
 
-  // Do something with element...
-  await element.click(); // Just an example.
+  
+await page.click('button[type="button"]'); // Click the "Save As" button
+  await page.waitForSelector('input[type="file"]'); // Wait for the file input to appear
 
-  // Dispose of handle
-  await element.dispose();
+  const input = await page.$('input[type="file"]');
+  await input.uploadFile('example.html'); // Select the HTML file format
 
-  // Close browser.
   await browser.close();
 })();
